@@ -1,5 +1,5 @@
 "use client"
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import FormSection from "../_components/FormSection";
 import OutputSection from "../_components/OutputSection";
 import { TEMPLATE } from "../../_components/TemplateList";
@@ -11,6 +11,10 @@ import { response } from "@/utils/AIModel";
 import { db } from "@/utils/db";
 import { AIOutput } from "@/utils/schema";
 import { useUser } from "@clerk/nextjs";
+import moment from 'moment';
+import { TotalUsageContext } from "@/app/(context)/UsageContext";
+import { useRouter } from "next/compat/router";
+import { UsageUpdateContext } from "@/app/(context)/UsageUpdateContext";
 
 interface PROPS{
     params: {
@@ -23,8 +27,22 @@ function CreateContent(props: PROPS) {
     const [loading, setLoading] = useState(false);
     const [aiOutput, setAiOutput] = useState<string>("");
     const {user} = useUser();
+    const router = useRouter();
+    const {totalUsage, setTotalUsage} = useContext(TotalUsageContext);
+    const {creditUpdate, setCreditUpdate} = useContext(UsageUpdateContext);
+
+    /**
+     * @params formData
+     * @returns
+     */
 
     const GenerateContent = async (formData:any) => {
+        if(totalUsage >= 10000){
+            alert("Credit limit reached. Please upgrade");
+            router.push('/dashboard');
+            return;
+        }
+
         setLoading(true);
         const selectedPrompt = selectedTemplate?.aiPrompt;
         const finalPrompt = JSON.stringify(formData) + ", " + selectedPrompt;
@@ -34,6 +52,8 @@ function CreateContent(props: PROPS) {
         setAiOutput(res?.text);
         await saveInDb(formData, selectedTemplate?.slug, res?.text);
         setLoading(false);
+
+        setCreditUpdate(Date.now());
     }
 
     const saveInDb = async (formData:any, slug:any, aiResponse:string) => {
@@ -42,6 +62,7 @@ function CreateContent(props: PROPS) {
             templateSlug: slug,
             aiResponse: aiResponse,
             createdBy:user?.primaryEmailAddress?.emailAddress,
+            createdAt:moment().format('DD/MM/YYYY'),
         })
     }
 
