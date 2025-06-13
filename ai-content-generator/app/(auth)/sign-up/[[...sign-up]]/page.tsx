@@ -1,5 +1,10 @@
 import { SignUp } from '@clerk/nextjs'
 
 export default function Page() {
-  return <SignUp />
+  return (
+    <div className='flex py-20 justify-center items-center'>
+      <SignUp />
+    </div>
+  ) 
+  
 }

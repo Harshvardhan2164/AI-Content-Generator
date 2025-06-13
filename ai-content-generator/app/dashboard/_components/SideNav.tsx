@@ -39,7 +39,7 @@ function SideNav() {
     return (
         <div className="h-screen relative p-5 shadow-sm border bg-white">
             <div className="flex justify-center">
-                <Image src={'/logoipsum-custom-logo.svg'} alt="Logo" width={120} height={100} />
+                <Image src={'/logoipsum-custom-logo.svg'} alt="Logo" width={140} height={140} />
             </div>
 
             <hr className="my-6 border" />

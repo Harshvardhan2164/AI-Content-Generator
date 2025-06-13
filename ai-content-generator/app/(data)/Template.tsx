@@ -60,7 +60,7 @@ export default  [
     },
     {
         name: 'Youtube SEO Title',
-        desc: 'An AI tool that serves as your personal blog post title writer, generating catchy and viral-worthy titles in your chosen language.',
+        desc: 'An AI tool that serves as your personal youtube title generator, generating catchy and viral-worthy titles in your chosen language.',
         category: 'Youtube Tools',
         icon: 'https://cdn-icons-png.flaticon.com/128/402/402075.png',
         slug: 'youtube-seo-title',
@@ -81,9 +81,8 @@ export default  [
 
     },
     {
-
         name: 'Youtube Description',
-        desc: 'An AI tool that serves as your personal blog post title writer, generating catchy and viral-worthy titles in your chosen language.',
+        desc: 'An AI tool that serves as your personal youtube description writer, generating informative and understandable text in your chosen language.',
         category: 'Youtube Tool',
         icon: 'https://cdn-icons-png.flaticon.com/128/2111/2111748.png',
         slug: 'youtube-description',
@@ -104,7 +103,7 @@ export default  [
     },
     {
         name: 'Youtube Tags',
-        desc: 'An AI tool that serves as your personal blog post title writer, generating catchy and viral-worthy titles in your chosen language.',
+        desc: 'An AI tool that serves as your youtube tag generator, generating catchy and viral-worthy titles in your chosen language.',
         category: 'Youtube Tool',
         icon: 'https://cdn-icons-png.flaticon.com/128/4674/4674918.png',
         slug: 'youtube-tag',
@@ -126,22 +125,22 @@ export default  [
         ]
     },
 
-    {
-        name: 'Rewrite Article (Plagiarism Free)',
-        desc: 'Use this tool to rewrite existing Article or Blog Post which can bypass AI detectors and also make it plagiarism free.',
-        icon: 'https://cdn-icons-png.flaticon.com/128/3131/3131607.png',
-        category: 'Rewriting Tool',
-        slug: 'rewrite-article',
-        aiPrompt: 'Rewrite give article without any Plagiarism in rich text editor format',
-        form: [
-            {
-                label: '🤖 Provide your Article/Blogpost or any other content to rewrite.',
-                field: 'textarea',
-                name: 'article',
-                required:true
-            }
-        ]
-    },
+    // {
+    //     name: 'Rewrite Article (Plagiarism Free)',
+    //     desc: 'Use this tool to rewrite existing Article or Blog Post which can bypass AI detectors and also make it plagiarism free.',
+    //     icon: 'https://cdn-icons-png.flaticon.com/128/3131/3131607.png',
+    //     category: 'Rewriting Tool',
+    //     slug: 'rewrite-article',
+    //     aiPrompt: 'Rewrite give article without any Plagiarism in rich text editor format',
+    //     form: [
+    //         {
+    //             label: '🤖 Provide your Article/Blogpost or any other content to rewrite.',
+    //             field: 'textarea',
+    //             name: 'article',
+    //             required:true
+    //         }
+    //     ]
+    // },
     {
         name: 'Text Improver',
         desc: 'This handy tool refines your writing, eliminating errors and redundancies for a clear, readable result. It also offers a comprehensive tone analysis and suggests better word choices.',
@@ -157,30 +156,30 @@ export default  [
             }
         ]
     },
-    {
-        name: 'Add Emojis to Text',
-        desc: 'An AI tool that serves as your personal blog post title writer, generating catchy and viral-worthy titles in your chosen language.',
-        icon: 'https://cdn-icons-png.flaticon.com/128/2584/2584606.png',
-        category: 'blog',
-        slug: 'add-emoji-to-text',
-        aiPrompt: 'Add Emoji to outline text depends on outline and rewrite it in rich text editor format',
-        form: [
-            {
-                label: 'Enter your text to add emojis',
-                field: 'textarea',
-                name: 'outline',
-                required:true
-            }
-        ]
-    },
+    // {
+    //     name: 'Add Emojis to Text',
+    //     desc: 'An AI tool that serves as your personal blog post title writer, generating catchy and viral-worthy titles in your chosen language.',
+    //     icon: 'https://cdn-icons-png.flaticon.com/128/2584/2584606.png',
+    //     category: 'blog',
+    //     slug: 'add-emoji-to-text',
+    //     aiPrompt: 'Add Emoji to outline text depends on outline and rewrite it in rich text editor format',
+    //     form: [
+    //         {
+    //             label: 'Enter your text to add emojis',
+    //             field: 'textarea',
+    //             name: 'outline',
+    //             required:true
+    //         }
+    //     ]
+    // },
     {
         name: 'Instagram Post Generator',
-        desc: 'An AI tool that serves as your personal blog post title writer, generating catchy and viral-worthy titles in your chosen language.',
+        desc: 'An AI tool that generate instagram posts based on your niche.',
         icon: 'https://cdn-icons-png.flaticon.com/128/15713/15713420.png',
         category: 'blog',
        
         slug: 'instagram-post-generator',
-        aiPrompt: 'Generate 3 Instagram post depends on a given keywords and give output in  in rich text editor format',
+        aiPrompt: 'Generate 3 Instagram post depends on a given keywords and give output in rich text editor format',
         form: [
             {
                 label: 'Enter Keywords for your post',
@@ -191,24 +190,24 @@ export default  [
            
         ]
     },
-    {
-        name: 'Instagram Hash Tag Generator',
-        desc: 'An AI tool that serves as your personal blog post title writer, generating catchy and viral-worthy titles in your chosen language.',
-        icon: 'https://cdn-icons-png.flaticon.com/128/7045/7045432.png',
-        category: 'blog',
+    // {
+    //     name: 'Instagram Hash Tag Generator',
+    //     desc: 'An AI tool that serves as your personal blog post title writer, generating catchy and viral-worthy titles in your chosen language.',
+    //     icon: 'https://cdn-icons-png.flaticon.com/128/7045/7045432.png',
+    //     category: 'blog',
        
-        slug: 'instagram-hash-tag-generator',
-        aiPrompt: 'Generate 15 Instagram hash tag depends on a given keywords and give output in  in rich text editor format',
-        form: [
-            {
-                label: 'Enter Keywords for your instagram hastag',
-                field: 'input',
-                name: 'keywords',
-                required:true
-            },
+    //     slug: 'instagram-hash-tag-generator',
+    //     aiPrompt: 'Generate 15 Instagram hash tag depends on a given keywords and give output in  in rich text editor format',
+    //     form: [
+    //         {
+    //             label: 'Enter Keywords for your instagram hastag',
+    //             field: 'input',
+    //             name: 'keywords',
+    //             required:true
+    //         },
            
-        ]
-    },
+    //     ]
+    // },
     {
         name: 'Instagram Post/Reel Idea',
         desc: 'An AI tool that generate New and trending instagram idea depends on your niche',
@@ -229,7 +228,7 @@ export default  [
     },
     {
         name: 'English Grammer Check',
-        desc: 'AI Model to Correct your english grammer by providing the text',
+        desc: 'An AI tool to correct your english grammer by providing the text in your chosen language.',
         icon:'https://cdn-icons-png.flaticon.com/128/12596/12596700.png',
         category: 'english',
        
@@ -282,7 +281,7 @@ export default  [
         ]
     },
     {
-        name: 'Code Bug Detector',
+        name: 'Code Debugger',
         desc: 'This tool analyzes your input, like error messages and code snippets, to pinpoint and fix bugs, offering detailed solutions and alternatives in a straightforward, user-friendly way.',
         icon:'https://cdn-icons-png.flaticon.com/128/4426/4426267.png',
         category: 'code-bug-detector',
