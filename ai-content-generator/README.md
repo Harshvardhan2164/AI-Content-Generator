@@ -1,36 +1,156 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Content.AI
+
+## Table of Contents
+
+  - [About The Project](about-the-project)
+  - [Features](features)
+  - [Technologies Used](technologies-used)
+  - [Getting Started](getting-started)
+      - [Prerequisites](prerequisites)
+      - [Installation](installation)
+      - [Environment Variables](environment-variables)
+  - [Usage](usage)
+  - [Authentication](authentication)
+  - [Database](database)
+  - [Contributing](contributing)
+  - [License](license)
+  - [Contact](contact)
+  - [Acknowledgments](acknowledgments)
+
+
+## About The Project
+
+The AI Content Generator is a modern web application designed to assist users in creating various forms of content using the power of Artificial Intelligence. Built with a robust and scalable stack, this platform provides a seamless experience for generating, editing, and managing textual content. It leverages cutting-edge frontend and backend technologies to deliver a fast, secure, and intuitive user interface.
+
+Whether you're a blogger, marketer, student, or anyone in need of quick content generation, this tool aims to streamline your creative process.
+
+
+## Features
+
+  - **AI-Powered Content Generation:** Generate diverse content types (e.g., articles, blog posts, social media captions, summaries) based on user prompts.
+  - **Rich Text Editing:** Utilize the integrated Toast UI Editor for comprehensive content formatting, including rich text, markdown, and visual editing modes.
+  - **Secure User Authentication:** Robust user login and registration powered by Clerk for secure access.
+  - **Persistent Data Storage:** Store and retrieve user-generated content securely in a PostgreSQL database.
+  - **Responsive Design:** Optimized for various devices, ensuring a consistent user experience on desktops, tablets, and mobile phones.
+  - **Type-Safe Development:** Built with TypeScript for enhanced code quality, fewer runtime errors, and improved developer experience.
+  - **Modern Web Stack:** Leverages Next.js for server-side rendering (SSR), static site generation (SSG), and API routes, providing optimal performance and SEO benefits.
+
+
+## Technologies Used
+
+This project is built using the following key technologies and libraries:
+
+  - **Frontend Framework:**
+      - [Next.js](https://nextjs.org/) (React Framework)
+      - [TypeScript](https://www.typescriptlang.org/)
+  - **Authentication:**
+      - [Clerk](https://clerk.com/)
+  - **Text Editor:**
+      - [Toast UI Editor](https://ui.toast.com/tui-editor/)
+  - **Database:**
+      - [Neon PostgreSQL](https://neon.tech/) (Serverless PostgreSQL)
+  - **ORM (Object-Relational Mapper):**
+      - [Drizzle ORM](https://orm.drizzle.team/)
+  - **Styling (Optional - Add if you use TailwindCSS, Styled Components, etc.):**
+      - [Tailwind CSS](https://tailwindcss.com/) (Example - *replace with your actual styling library*)
+
 
 ## Getting Started
 
-First, run the development server:
+Follow these steps to set up the project locally on your machine.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+### Prerequisites
+
+Before you begin, ensure you have the following installed:
+
+  - Node.js (LTS version recommended)
+  - npm
+  - Git
+
+### Installation
+
+1.  **Clone the repository:**
+
+    ```bash
+    git clone https://github.com/Harshvardhan2164/AI-Content-Generator.git
+    cd AI-Content-Generator/ai-content-generator/
+    ```
+
+2.  **Install dependencies:**
+
+    ```bash
+    npm install --force
+    ```
+
+### Environment Variables
+
+Create a `.env.local` file in the root of the project and add the following environment variables. Replace the placeholder values with your actual credentials.
+
+```env
+# Clerk Authentication
+NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=pk_live_YOUR_CLERK_PUBLISHABLE_KEY
+CLERK_SECRET_KEY=sk_live_YOUR_CLERK_SECRET_KEY
+
+# Neon PostgreSQL Database
+DATABASE_URL="postgresql://user:password@host:port/database?sslmode=require"
+
+# AI Service API Key (e.g., OpenAI, Google Gemini, etc.)
+# Replace with the actual environment variable name used in your code for the AI API Key
+NEXT_PUBLIC_AI_API_KEY=YOUR_AI_SERVICE_API_KEY
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+**How to obtain these keys:**
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+  - **Clerk:** Sign up at [Clerk.com](https://clerk.com/) to get your publishable and secret keys.
+  - **Neon PostgreSQL:** Create an account on [Neon.tech](https://neon.tech/) to provision a serverless PostgreSQL database and obtain your connection string.
+  - **AI Service API Key:** Obtain an API key from your chosen AI provider (e.g., OpenAI, Google Gemini, etc.).
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Usage
 
-## Learn More
+Once the application is running, you can:
 
-To learn more about Next.js, take a look at the following resources:
+1.  **Register/Log in:** Use the authentication flow powered by Clerk to create an account or sign in.
+2.  **Generate Content:** Navigate to the content generation section (e.g., a dashboard or editor page).
+3.  **Input Prompts:** Provide clear prompts or instructions to the AI.
+4.  **Edit Content:** Utilize the Toast UI Editor to refine and format the generated text.
+5.  **Save Content:** Save your creations to the database for future access.
+6.  **Manage Content:** View, edit, or delete your saved content from your personal dashboard.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Authentication
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+This project uses [Clerk](https://clerk.com/) for a robust and secure authentication system. Clerk provides:
 
-## Deploy on Vercel
+  - Easy-to-integrate authentication flows (sign-up, sign-in, profile management).
+  - Support for various authentication methods (email/password, social logins).
+  - Secure session management and user data handling.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Ensure your Clerk environment variables are correctly set for authentication to function.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Database
+
+The application utilizes [Neon PostgreSQL](https://neon.tech/) as its primary data store, offering a serverless, highly scalable, and performant relational database solution.
+
+[Drizzle ORM](https://orm.drizzle.team/) is used to interact with the PostgreSQL database. Drizzle provides:
+
+  - A type-safe and performant way to query and manipulate data.
+  - Schema definition directly in TypeScript, simplifying database migrations and management.
+  - Excellent support for PostgreSQL-specific features.
+
+## Contributing
+
+Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+
+If you have a suggestion that would make this better, please fork the repository and create a pull request. You can also open an issue with the tag "enhancement".
+
+## License
+
+Distributed under the MIT License. See `LICENSE` for more information.
+
+## Acknowledgments
+
+  - [Next.js Documentation](https://nextjs.org/docs)
+  - [Clerk Documentation](https://clerk.com/docs)
+  - [Toast UI Editor Documentation](https://ui.toast.com/tui-editor/)
+  - [Neon Tech Documentation](https://neon.tech/docs/)
+  - [Drizzle ORM Documentation](https://orm.drizzle.team/docs)
+  - [Gemini](https://ai.google.dev/)
